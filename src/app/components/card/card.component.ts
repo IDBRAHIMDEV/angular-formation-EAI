@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -7,14 +7,22 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class CardComponent implements OnInit {
 
+  @Input() id = ""
   @Input() title = ""
   @Input() price  = 0
   @Input() content  = ""
   @Input() image  = ""
 
+
+  @Output() delete = new EventEmitter()
+
   constructor() { }
 
   ngOnInit(): void {
+  }  
+
+  deleteCard() {
+    this.delete.emit({id: this.id, })
   }
 
 }

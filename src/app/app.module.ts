@@ -13,6 +13,9 @@ import { HomeComponent } from './components/home/home.component';
 import { CoursesComponent } from './components/courses/courses.component';
 import { CardComponent } from './components/card/card.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { ListPostsComponent } from './components/list-posts/list-posts.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,11 +27,13 @@ import { CardComponent } from './components/card/card.component';
     ListComponent,
     HomeComponent,
     CoursesComponent,
-    CardComponent
+    CardComponent,
+    ListPostsComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

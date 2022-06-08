@@ -21,6 +21,14 @@ export class CoursesComponent implements OnInit {
     this.etat = etat
   }
 
+  deleteCourseFromCard(data: any) {
+
+    console.log("course deleted !", data)
+
+    this.courses = this.courses.filter(course => course.id !== data.id)
+  
+  }
+
   editCourse(course: any) {
     this.course = course
     this.new = true
