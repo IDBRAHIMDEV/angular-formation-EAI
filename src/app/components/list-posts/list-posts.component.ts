@@ -10,13 +10,15 @@ export class ListPostsComponent implements OnInit {
 
   constructor(public postsService: PostsService) { }
 
+  posts: any[] = []
+
   ngOnInit(): void {
     this.retreiveAllPosts()
   }
 
   retreiveAllPosts() {
-    this.postsService.getAllPosts().subscribe((data) => {
-      console.log('data', data)
+    this.postsService.getAllPosts().subscribe((data: any) => {
+      this.posts = data
     })
   }
 

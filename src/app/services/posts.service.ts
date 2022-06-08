@@ -12,5 +12,9 @@ export class PostsService {
     return this.http.get("https://jsonplaceholder.typicode.com/posts")
   }
 
+  _persistPost(data: any) {
+    return this.http.post("https://jsonplaceholder.typicode.com/posts", data)
+  }
+
 
 }

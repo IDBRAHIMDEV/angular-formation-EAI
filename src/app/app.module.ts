@@ -14,7 +14,8 @@ import { CoursesComponent } from './components/courses/courses.component';
 import { CardComponent } from './components/card/card.component';
 
 import { HttpClientModule } from '@angular/common/http';
-import { ListPostsComponent } from './components/list-posts/list-posts.component'
+import { ListPostsComponent } from './components/list-posts/list-posts.component';
+import { CreatePostComponent } from './components/create-post/create-post.component'
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ListPostsComponent } from './components/list-posts/list-posts.component
     HomeComponent,
     CoursesComponent,
     CardComponent,
-    ListPostsComponent
+    ListPostsComponent,
+    CreatePostComponent
   ],
   imports: [
     BrowserModule,
