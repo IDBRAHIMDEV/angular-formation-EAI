@@ -1,0 +1,14 @@
+
+
+<h3>Menu</h3>
+<hr>
+
+<input type="text" (keyup.enter)="addCourse()" class="form-control" [(ngModel)]="myCourse">
+
+<ul class="list-group">
+    <li *ngFor="let course of courses" class="list-group-item">
+        {{ course }}
+        <button class="btn btn-sm mr-1 btn-info">Edit</button>
+        <button class="btn btn-sm mr-1 btn-danger" (click)="deleteCourse(course)">Delete</button>
+    </li>
+</ul>
