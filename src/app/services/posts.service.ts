@@ -6,14 +6,20 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PostsService {
 
+  apiUrl = "http://localhost:3000/posts"
+
   constructor(private http: HttpClient) { }
 
   getAllPosts() {
-    return this.http.get("https://jsonplaceholder.typicode.com/posts")
+    return this.http.get(this.apiUrl)
   }
 
   _persistPost(data: any) {
-    return this.http.post("https://jsonplaceholder.typicode.com/posts", data)
+    return this.http.post(this.apiUrl, data)
+  }
+
+  _getOnePost(id: number) {
+    return this.http.get(`${this.apiUrl}/${id}`)
   }
 
 

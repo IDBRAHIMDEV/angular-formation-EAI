@@ -17,6 +17,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListPostsComponent } from './components/list-posts/list-posts.component';
 import { CreatePostComponent } from './components/create-post/create-post.component'
 
+import { RouterModule } from '@angular/router';
+import { ShowPostComponent } from './components/show-post/show-post.component';
+
+const routes = [
+  {path: "", component: ListPostsComponent },
+  {path: "posts/create", component: CreatePostComponent },
+  {path: "posts/:id", component: ShowPostComponent },
+  {path: "courses", component: CoursesComponent}
+]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,12 +40,14 @@ import { CreatePostComponent } from './components/create-post/create-post.compon
     CoursesComponent,
     CardComponent,
     ListPostsComponent,
-    CreatePostComponent
+    CreatePostComponent,
+    ShowPostComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]

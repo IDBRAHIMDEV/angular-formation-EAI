@@ -5,7 +5,9 @@
     <div class="col-md-6">
         <h1>List of Posts</h1>
     </div>
-    <div class="col-md-6"></div>
+    <div class="col-md-6 text-end">
+        <a routerLink="/posts/create" class="btn btn-link"><i class="fa fa-plus-circle"></i> Create a Post</a>
+    </div>
 </div>
 
 <div class="row">
@@ -13,7 +15,7 @@
 
         <ul class="list-group">
             <li class="list-group-item" *ngFor="let post of posts">
-                <h2>{{ post.title }}</h2>
+                <h2><a [routerLink]="['/posts', post.id]">{{ post.title }}</a></h2>
                 <p>{{ post.body }}</p>
                 <hr>
                 <button class="btn btn-sm btn-warning mr-2"><i class="fa fa-pencil"></i></button>
